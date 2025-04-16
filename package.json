@@ -1,0 +1,29 @@
+{
+  "name": "rendezvous-server",
+  "version": "1.0.0",
+  "description": "This application will facilitate three systems in it:   1. Authentication System   2. Reservation System   3. Ordering System",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indodanazwide/rendezvous-server.git"
+  },
+  "keywords": [],
+  "author": "Bukeka Nxumalo",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/indodanazwide/rendezvous-server/issues"
+  },
+  "homepage": "https://github.com/indodanazwide/rendezvous-server#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0",
+    "nodemon": "^3.1.9"
+  }
+}
