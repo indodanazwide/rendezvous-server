@@ -1,6 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import connectDB from './config/database.js'
+import router from './router.js'
+import session from 'express-session'
+import passport from './config/passport.js'
+import { connectDB } from './config/database.js'
 
 dotenv.config()
 
@@ -9,6 +12,19 @@ const port = process.env.PORT || 8008
 
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
+
+server.use(
+    session({
+        secret: process.env.SESSION_SECRET || '',
+        resave: false,
+        saveUninitialized: true,
+    })
+)
+
+server.use(passport.initialize())
+server.use(passport.session())
+
+server.use('/', router)
 
 const startServer = async () => {
     try {

@@ -13,7 +13,7 @@ const pool = mysql.createPool({
     queueLimit: 0
 })
 
-const conectDB = async () => {
+const connectDB = async () => {
     try {
         await pool.getConnection()
         console.log(`Connected to the database`)
@@ -23,4 +23,4 @@ const conectDB = async () => {
     }
 }
 
-export default conectDB
+export { pool, connectDB }  
